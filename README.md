@@ -1,1 +1,1 @@
-Tic Tak Toe Game on terminal 
+Tic Tac Toe Game on terminal - with python 
