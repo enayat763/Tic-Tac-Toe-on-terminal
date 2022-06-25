@@ -9,13 +9,10 @@ print(word[1], "**", word[2], "**" ,word[3])
 print(word[4], "**" ,word[5], "**" ,word[6])
 print(word[5], "**" ,word[8], "**" ,word[9])
 def cal(aa,user):
-    for y in range(1,10):
-        if user=="player1":
-            if y==aa:
-                word[y]=x
-        elif user=="player2":
-            if y==aa:
-                word[y]=z
+    if user=="player1":
+        word[aa]=x
+    elif user=="player2":
+        word[aa]=z
     print(word[1], "**", word[2], "**" ,word[3])
     print(word[4], "**" ,word[5], "**" ,word[6])
     print(word[7], "**" ,word[8], "**" ,word[9])
@@ -35,7 +32,11 @@ while True:
             print("player 2 has won")
             break
     while True:
-        b = int(input("player1, choose a socket (1-9): "))
+        try:
+            b = int(input("player1, choose a socket (1-9): "))
+        except:
+            print("please enter a number between 1-9")
+            continue
         if b>9 or b<1:
             print("please enter a number between 1-9")
             continue
@@ -62,7 +63,12 @@ while True:
         print("No Winner ,Restart the Game")
         break
     while True:
-        c = int(input("player2, choose a socket (1-9): "))
+        try:
+            c = int(input("player2, choose a socket (1-9): "))
+        except:
+            print("please enter a number between 1-9")
+            continue
+
         if c>9 or c<0:
             print("please enter a number between 1-9")
             continue
