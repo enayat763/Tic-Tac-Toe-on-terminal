@@ -1,18 +1,14 @@
 word=[0,1,2,3,4,5,6,7,8,9]
 
-x="X"
-z="O"
 counter=set()
-counta=[]
-countb=[]
 print(word[1], "**", word[2], "**" ,word[3])
 print(word[4], "**" ,word[5], "**" ,word[6])
 print(word[5], "**" ,word[8], "**" ,word[9])
 def cal(aa,user):
     if user=="player1":
-        word[aa]=x
+        word[aa]="X"
     elif user=="player2":
-        word[aa]=z
+        word[aa]="O"
     print(word[1], "**", word[2], "**" ,word[3])
     print(word[4], "**" ,word[5], "**" ,word[6])
     print(word[7], "**" ,word[8], "**" ,word[9])
