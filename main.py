@@ -18,17 +18,15 @@ def cal(aa,user):
     print(word[7], "**" ,word[8], "**" ,word[9])
 az = ('X', 'X', 'X')
 ax = ('O', 'O', 'O')
-while True:
-    ab = (word[1], word[2], word[3])
-    ac = (word[1], word[5], word[9])
-    ad = (word[1], word[4], word[7])
-    ae = (word[2], word[5], word[8])
-    af = (word[3], word[6], word[9])
-    ag = (word[3], word[5], word[7])
-    ah = (word[4], word[5], word[6])
-    ai = (word[7], word[8], word[9])
+def values():
+    value=((word[1], word[2], word[3]),(word[1], word[5], word[9]),(word[1], word[4], word[7]),
+    (word[2], word[5], word[8]),(word[3], word[6], word[9]),(word[3], word[5], word[7]),
+    (word[4], word[5], word[6]),(word[7], word[8], word[9]),)
+    return value
 
-    if ab == ax or ac== ax or ad== ax or ae== ax or af== ax or ag== ax or ah== ax or ai== ax:
+while True:
+    storage=values()
+    if storage[0] == ax or storage[1]== ax or storage[2]== ax or storage[3]== ax or storage[4]== ax or storage[5]== ax or storage[6]== ax or storage[7]== ax:
             print("player 2 has won")
             break
     while True:
@@ -42,24 +40,16 @@ while True:
             continue
         if b not in counter:
             counter.add(b)
-            counta.append(b)
             cal(aa=b, user="player1")
             break
         else:
             print("slot has been taken choose another ")
             continue
-    ab = (word[1], word[2], word[3])
-    ac = (word[1], word[5], word[9])
-    ad = (word[1], word[4], word[7])
-    ae = (word[2], word[5], word[8])
-    af = (word[3], word[6], word[9])
-    ag = (word[3], word[5], word[7])
-    ah = (word[4], word[5], word[6])
-    ai = (word[7], word[8], word[9])
-    if ab == az or ac==az or ad==az or ae==az or af==az or ag==az or ah==az or ai==az:
+    storage=values()
+    if storage[0] == az or storage[1]== az or storage[2]== az or storage[3]== az or storage[4]== az or storage[5]== az or storage[6]== az or storage[7]== az:
         print("player 1 has won")
         break
-    if len(counta)==5:
+    if len(counter)==9:
         print("No Winner ,Restart the Game")
         break
     while True:
@@ -74,16 +64,11 @@ while True:
             continue
         if c not in counter:
             counter.add(c)
-            countb.append(c)
             cal(aa=c, user="player2")
             break
         else:
             print("slot has been taken choose another ")
             continue
-    if len(countb)==4:
-        print("Restart the Game")    
-        break
-
     continue
 
 
