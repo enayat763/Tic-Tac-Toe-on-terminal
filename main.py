@@ -1,19 +1,28 @@
+from os import system,name
+def clear():
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+  
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
 
 def play():
-
     word=[0,1,2,3,4,5,6,7,8,9]
     counter=set()
-    print(word[1], "**", word[2], "**" ,word[3])
-    print(word[4], "**" ,word[5], "**" ,word[6])
-    print(word[5], "**" ,word[8], "**" ,word[9])
+    def printer():
+        print(word[1], "**", word[2], "**" ,word[3])
+        print(word[4], "**" ,word[5], "**" ,word[6])
+        print(word[7], "**" ,word[8], "**" ,word[9])
+    printer()    
     def cal(aa,user):
         if user=="player1":
             word[aa]="X"
         elif user=="player2":
             word[aa]="O"
-        print(word[1], "**", word[2], "**" ,word[3])
-        print(word[4], "**" ,word[5], "**" ,word[6])
-        print(word[7], "**" ,word[8], "**" ,word[9])
+        clear()    
+        printer()
     az = ('X', 'X', 'X')
     ax = ('O', 'O', 'O')
     def values():
@@ -72,6 +81,7 @@ play()
 while True:
     answer=input("Do You Wanna play Again (Y/N)?")   
     if answer=="Y":
+        clear()
         play()
         continue
     elif answer=="N":
